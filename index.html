@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policia e Ladrao - Antônio Konrath</title>
+    <style>
+        body {
+            text-align: center;
+            justify-content: center;
+        }
+
+        #ladrao {
+            color: #990000;
+            user-select: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Policia e Ladrao</h1>
+    <p id="ladrao">Vamos Ver</p>
+    <br>
+    <input type="text" id="add" placeholder="Adicionar pessoas">
+    <input type="submit" id="submit" value="Adicionar">
+    <br>
+    <p id="total">
+
+    </p>
+</body>
+</html>
+
+<script>
+    people = [];
+
+    document.getElementById("submit").addEventListener("click", function() {
+        people.push(document.getElementById("add").value);
+        total.innerHTML = people + "<br>";
+    });
+
+    document.getElementById("ladrao").addEventListener("click", function() {
+        let i = Math.floor(Math.random() * (1 + people.length - 1));
+        document.getElementById("ladrao").innerHTML = people[i];
+    });
+</script>
